@@ -1,0 +1,4 @@
+reflex>=0.4.6
+openai>=1
+python-dotenv>=1.0.0
+sqlmodel>=0.0.8
