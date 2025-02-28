@@ -70,10 +70,14 @@ class State(rx.State):
     )
     gen_response = False
     tone: str = "😊 Formal"
-    length: str = "1000"
+    length: int = 1000
     search_value: str = ""
     sort_value: str = ""
     sort_reverse: bool = False
+
+    @rx.event
+    def set_end(self, value: list[int]):
+        self.length = value[0]
 
     def is_admin(self) -> bool:
         """Check if current user is admin."""
@@ -169,6 +173,7 @@ class State(rx.State):
         except Exception as e:
             print(f"Error loading entries: {e}")
             self.users = []
+    
 
     def get_user(self, user: User):
         """Set current user, with null check."""

@@ -41,7 +41,7 @@ def options():
                 default_value=1000,
                 step=25,
                 size="2",
-                on_change=State.set_length,
+                on_change=State.set_end.throttle(50),
             ),
             width="100%",
         ),

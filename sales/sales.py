@@ -88,7 +88,7 @@ def email() -> rx.Component:
 
 # Configure the app
 app = rx.App(
-    state=State,  # Set the state class
+    # state=State,  # Set the state class
     theme=rx.theme(
         appearance="light",
         has_background=True,
